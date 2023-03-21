@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Palindroma</title>
+  </head>
+  <body>
+    <label for="palabra">Introduce una palabra:</label>
+    <input type="text" id="palabra">
+    <button onclick="comprobarPalindromo()">Comprobar</button>
+    <p id="resultado"></p>
+    
+    <script>
+      function comprobarPalindromo() {
+        const palabra = document.getElementById("palabra").value.toLowerCase().replace(/\s/g, "");
+        const resultado = document.getElementById("resultado");
+        
+        if (palabra === palabra.split("").reverse().join("")) {
+          resultado.textContent = `"${palabra}" es palíndromo`;
+        } else {
+          resultado.textContent = `"${palabra}" no es palíndromo`;
+        }
+      }
+    </script>
+  </body>
+</html>
+
